@@ -11,18 +11,18 @@ PS: [ESJsonFormat 地址](https://github.com/EnjoySR/ESJsonFormat-Xcode)
 //将XXXX替换成刚刚获取的DVTPlugInCompatibilityUUID 
 ```find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add XXXX```
 
-![插件的注意点](file:///var/folders/n1/h7vn0fbn5hn39tlk50dx4xrr0000gn/T/WizNote/13848968.png)
+![插件的注意点](https://github.com/CheckRan/RModelCreat/ScreenShot/1.png)
 
 
 #开始代码
 ###1导入数据什么的
-![](file:///var/folders/n1/h7vn0fbn5hn39tlk50dx4xrr0000gn/T/WizNote/8806868.png)
+![](https://github.com/CheckRan/RModelCreat/ScreenShot/2.png)
 
 添加的名字就是类的名字,结构是随数据从上至下
 ##(切记 : 是先完整解析一个子数据完整的结构,再解析下一个,多用几次就会了)
 
 ###2 导入头文件调用方法 , 完成
-![好复杂啊,总算完成了](file:///var/folders/n1/h7vn0fbn5hn39tlk50dx4xrr0000gn/T/WizNote/16706158.png)
+![好复杂啊,总算完成了](https://github.com/CheckRan/RModelCreat/ScreenShot/3.png)
 
 
 有人会说我需要返回一个Model 的数组,那你需要实现此方法
@@ -37,7 +37,7 @@ PS: [ESJsonFormat 地址](https://github.com/EnjoySR/ESJsonFormat-Xcode)
 别急,俺已经帮你实现 id -> ID   description -> desc 
 ,ESJsonFormat 勾选 Uppercase key for 'id'
 description 没有办法,只能你在 Model 中手工改一下罗 !
-![](file:///var/folders/n1/h7vn0fbn5hn39tlk50dx4xrr0000gn/T/WizNote/4e4c84a9-debf-4dab-ad68-543ab739a778/index_files/5462275.png)
+![](https://github.com/CheckRan/RModelCreat/ScreenShot/4.png)
 
 
 假如说:你还有别的需要改 , 比如说 后台给的是 `NSObject` ,(估计没有后台会给这个吧 ),你需要这样
@@ -84,7 +84,12 @@ description 没有办法,只能你在 Model 中手工改一下罗 !
 
 ---
 ##切记: 
-###如果程序在解析数据的时候崩掉 , 请检查数据输入是否为空 ! ! ! ! 
+###如果程序在解析数据的时候崩掉 , 请检查数据输入是否为空 ! ! ! !
+
+#最近可能更新比较频繁,如果要不想麻烦,请用 cocoapods 
+`
+pod 'RModelCreat' ,'0.1.1'
+` 
 
 ---
 
