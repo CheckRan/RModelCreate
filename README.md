@@ -103,4 +103,7 @@ pod 'RModelCreat' ,'0.1.1'
 ###测试数据
 ```
 {  "code": "0",  "msg": "success",  "version": "4.0",  "timestamp": 1442571669000,  "data": {    "page": "1",    "size": "10",    "total": "23",    "count": "10",    "data": [      {        "comment_id": "2157",        "user_id": "878338",        "headphoto": "http:\/\/q.qlogo.cn\/qqapp\/100956582\/1F6F7412241E465F186A2F804415D36E\/100",        "nickname": "紫色幽兰",        "create_time": "23小时前",        "content": "好吃极了",        "agreement_amount": "",        "like": ""      }      ]  }}```
-
+如需转载 , 请 注明来源 :
+`
+ https://github.com/CheckRan/RModelCreat
+ `
