@@ -7,9 +7,15 @@ PS: [ESJsonFormat 地址](https://github.com/EnjoySR/ESJsonFormat-Xcode)
 插件不能用 
 
 //获取DVTPlugInCompatibilityUUID字段
-```defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID ```
+```
+defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID 
+```
+
 //将XXXX替换成刚刚获取的DVTPlugInCompatibilityUUID 
-```find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add XXXX```
+```
+find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add XXXX
+```
+
 
 ![插件的注意点](https://github.com/CheckRan/RModelCreat/raw/master/ScreenShot/1.png)
 
@@ -86,9 +92,11 @@ description 没有办法,只能你在 Model 中手工改一下罗 !
 ###如果程序在解析数据的时候崩掉 , 请检查数据输入是否为空 ! ! ! !
 
 #最近可能更新比较频繁,如果要不想麻烦,请用 cocoapods 
+
 `
 pod 'RModelCreat' ,'0.1.1'
-` 
+`
+
 
 ---
 
