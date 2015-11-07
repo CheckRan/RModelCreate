@@ -106,9 +106,11 @@ description 没有办法,只能你在 Model 中手工改一下罗 !
    所以
    
   **不需要在**
+  
    `
    + (NSDictionary *)objectClassInArray
     `
+    
 中加入更多东西 ! 
 
 这是完成状态的图 , 是不是够简单粗暴 , 如果发现BUG 或者有好的想法请 Issue me !
