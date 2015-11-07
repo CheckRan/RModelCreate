@@ -13,6 +13,18 @@
 
 @implementation NSObject (RModel)
 
+static char key;
+// 在 category 中需要重写 get 和 set 方法中
+-(NSMutableArray *)allKeysArray
+{
+    return objc_getAssociatedObject([self class], &key);
+}
+
+-(void)setAllKeysArray:(NSMutableArray *)allKeysArray
+{
+    objc_setAssociatedObject([self class], &key, allKeysArray, OBJC_ASSOCIATION_RETAIN);
+}
+
 +(id)objectWithDictionary:(NSDictionary *)dictionary;
 {
     return [[self alloc]initWithDictionary:dictionary];
@@ -24,9 +36,8 @@
         //根据类文件描述,找到当前类中, 特殊的那个属性类型,比如说 Address
         unsigned int outCount;
         objc_property_t * propertyList = class_copyPropertyList([self class], &outCount);
-//        NSLog(@"allKeys : %@",dictionary.allKeys);
         
-        NSMutableArray * allKeysArray = [dictionary.allKeys mutableCopy];
+        self.allKeysArray = [dictionary.allKeys mutableCopy];
 
         for (int i = 0 ; i < outCount; i++ ) {
             objc_property_t property = propertyList[i];
@@ -43,20 +54,19 @@
                 value = [proType.customType objectWithDictionary:dictionary[keyName]];
             }
             if (value == nil) {//如果字典中没有值 , 调用 r_dealSetValueKeyNotFound
-                // 此处性能浪费; (如何传入的地址为同一地址)
-                allKeysArray = [self r_dealSetValueKeyNotFound:keyName andDictionary:dictionary andAllKeysArray:allKeysArray];
+
+                [self r_dealSetValueKeyNotFound:keyName andDictionary:dictionary];
             }
-            else//主要设置值
+            else
             {
                 [self setValue:value forKey:keyName];
-                [allKeysArray removeObject:keyName];
+                [self.allKeysArray removeObject:keyName];
             }
         }
-        //
-        allKeysArray = [self r_modelDidLoadingWithDictionary:dictionary andAllKeysArray:allKeysArray];
-        if (allKeysArray.count) {
+        [self r_modelDidLoadingWithDictionary:dictionary];
+        if (self.allKeysArray.count) {
             //打印数据中属性 没有出现在模型中
-            [self ZJModelWithDiconary:dictionary andAllKeysArray:allKeysArray];
+            [self ZJModelWithDiconary:dictionary];
         }
         [self addMorePropertyOrSomething];
         
@@ -69,10 +79,10 @@
     
 }
 
--(void)ZJModelWithDiconary:(NSDictionary *)dictionary andAllKeysArray:(NSArray *)allKeysArray
+-(void)ZJModelWithDiconary:(NSDictionary *)dictionary
 {
     printf("\n添加下列属性至 %s \n",[NSStringFromClass([self class]) UTF8String]);
-    for (NSString *key in allKeysArray) {
+    for (NSString *key in self.allKeysArray) {
 //        NSString *type = ([dictionary[key] isKindOfClass:[NSNumber class]])?@"NSNumber":@"NSString";
         Class type = [dictionary[key] class];//NSString  NSNumber
         if ([type isSubclassOfClass:[NSString class]] || [type isSubclassOfClass:[NSNumber class]]) {
@@ -93,25 +103,29 @@
 }
 
 //默认 ID -> id  desc -> description
--(NSMutableArray *)r_dealSetValueKeyNotFound:(NSString *)propertyName andDictionary:(NSDictionary *)dictionary andAllKeysArray:(NSMutableArray *)allKeysArray
+-(void)r_dealSetValueKeyNotFound:(NSString *)propertyName andDictionary:(NSDictionary *)dictionary
 {
+    // ID -> id
+    // ID -> Id
     if ([propertyName isEqualToString:@"ID"]) {
-        [self setValue:dictionary[@"id"] forKey:propertyName];
-        [allKeysArray removeObject:@"id"];
+        [self r_FindDictionary:dictionary andKey:@"id" toPropertyName:propertyName];
     }
     else if ([propertyName isEqualToString:@"desc"])
     {
-        [self setValue:dictionary[@"description"] forKey:propertyName];
-        [allKeysArray removeObject:@"description"];
+        [self r_FindDictionary:dictionary andKey:@"description" toPropertyName:propertyName];
     }
-    return allKeysArray;
+    
+}
+
+//设置值
+-(void)r_FindDictionary:(NSDictionary *)dictionary andKey:(NSString *)keyString toPropertyName:(NSString *)propertyName
+{
+    [self setValue:dictionary[keyString] forKey:propertyName];
+    [self.allKeysArray removeObject:keyString];
 }
 
 +(NSArray *)objectsWithArray:(NSArray *)array
 {
-    if (array.count == 0) {
-        return nil;
-    }
     NSMutableArray * arrayM = [ NSMutableArray array];
     for (NSDictionary * dict in array) {
         [arrayM addObject:[self objectWithDictionary:dict]];
@@ -119,15 +133,15 @@
     return arrayM;
 }
 
--(NSMutableArray *)r_modelDidLoadingWithDictionary:(NSDictionary *)dictionary andAllKeysArray:(NSMutableArray *)allKeysArray
+
+-(void)r_modelDidLoadingWithDictionary:(NSDictionary *)dictionary
 {
     NSDictionary * dict = [[self class] objectClassInArray];
     for (NSString * str in dict) {
         Class clazz = dict[str];
         [self setValue:[clazz objectsWithArray:dictionary[str]] forKey:str];
-        [allKeysArray removeObject:str];
+        [self.allKeysArray removeObject:str];
     }
-    return allKeysArray;
 }
 
 -(NSDictionary *)objectWithobject
@@ -268,5 +282,10 @@
     }
     return stringM;
 }
+
+@end
+
+@implementation NSMutableArray (RModelRemove)
+
 
 @end

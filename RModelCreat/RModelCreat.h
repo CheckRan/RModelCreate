@@ -1,8 +1,8 @@
 //
 //  RModelCreat.h
-//  iZhiHuTest
+//  FunnyLife
 //
-//  Created by qianfeng on 15/10/16.
+//  Created by qianfeng on 15/10/10.
 //  Copyright © 2015年 qianfeng. All rights reserved.
 //
 
