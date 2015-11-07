@@ -87,6 +87,34 @@ description 没有办法,只能你在 Model 中手工改一下罗 !
  }
 ```
 
+如出现以下图打印信息:
+![错误信息](https://github.com/CheckRan/RModelCreat/raw/master/ScreenShot/5.png)
+
+原因: 是由于字典中有存在 `NSString` 的数组 ,  ESJsonFormat 对这样的数据监测会失败 , 所以你需要把 
+`
+@property (nonatomic,strong) NSArray *images;
+` 
+写入
+ `
+ RDemoStoriesModel
+ ` 
+ 中 , 因为其内仅仅只是
+  `
+  NSString
+  ` 
+  ,
+   所以
+   
+  **不需要在**
+   `
+   + (NSDictionary *)objectClassInArray
+    `
+中加入更多东西 ! 
+
+这是完成状态的图 , 是不是够简单粗暴 , 如果发现BUG 或者有好的想法请 Issue me !
+
+![](https://github.com/CheckRan/RModelCreat/raw/master/ScreenShot/6.png)
+
 ---
 ##切记: 
 ###如果程序在解析数据的时候崩掉 , 请检查数据输入是否为空 ! ! ! !
@@ -94,9 +122,8 @@ description 没有办法,只能你在 Model 中手工改一下罗 !
 #最近可能更新比较频繁,如果要不想麻烦,请用 cocoapods 
 
 `
-pod 'RModelCreat' ,'0.1.1'
+pod 'RModelCreat' ,'1.0'
 `
-
 
 ---
 
