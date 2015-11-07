@@ -102,11 +102,8 @@ description 没有办法,只能你在 Model 中手工改一下罗 !
   `
   NSString
   ` 
-  ,
-   所以
-   
-  **不需要在**
-  
+ 
+   所以 **不需要在**
    `
    + (NSDictionary *)objectClassInArray
     `
