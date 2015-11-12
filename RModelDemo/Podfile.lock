@@ -20,14 +20,11 @@ PODS:
   - AFNetworking/UIKit (2.6.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - RModelCreat (1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
-  - RModelCreat (= 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 7f317038a9710cabfa43ec56396b307b45df72ab
-  RModelCreat: e532c861fb6985ee85d721fa651373ac88bb71a8
 
 COCOAPODS: 0.39.0

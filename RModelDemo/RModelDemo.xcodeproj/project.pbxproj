@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		09011EFE9E2189E9847AFD3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D78DF39874D53EC2C22ADCA /* libPods.a */; };
+		BC6D4C571BF4C40400617BDE /* NSObject+RModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D4C531BF4C40400617BDE /* NSObject+RModel.m */; settings = {ASSET_TAGS = (); }; };
+		BC6D4C581BF4C40400617BDE /* RPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D4C561BF4C40400617BDE /* RPropertyType.m */; settings = {ASSET_TAGS = (); }; };
 		BCE3B21F1BEDCAAC00357934 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B21E1BEDCAAC00357934 /* main.m */; };
 		BCE3B2221BEDCAAC00357934 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B2211BEDCAAC00357934 /* AppDelegate.m */; };
 		BCE3B2251BEDCAAC00357934 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B2241BEDCAAC00357934 /* ViewController.m */; };
@@ -20,6 +22,11 @@
 /* Begin PBXFileReference section */
 		230841C27F94873B63D201E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8D78DF39874D53EC2C22ADCA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6D4C521BF4C40400617BDE /* NSObject+RModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RModel.h"; sourceTree = "<group>"; };
+		BC6D4C531BF4C40400617BDE /* NSObject+RModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RModel.m"; sourceTree = "<group>"; };
+		BC6D4C541BF4C40400617BDE /* RModelCreat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RModelCreat.h; sourceTree = "<group>"; };
+		BC6D4C551BF4C40400617BDE /* RPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPropertyType.h; sourceTree = "<group>"; };
+		BC6D4C561BF4C40400617BDE /* RPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPropertyType.m; sourceTree = "<group>"; };
 		BCE3B21A1BEDCAAC00357934 /* RModelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RModelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE3B21E1BEDCAAC00357934 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCE3B2201BEDCAAC00357934 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +71,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC6D4C511BF4C40400617BDE /* RModelCreat */ = {
+			isa = PBXGroup;
+			children = (
+				BC6D4C521BF4C40400617BDE /* NSObject+RModel.h */,
+				BC6D4C531BF4C40400617BDE /* NSObject+RModel.m */,
+				BC6D4C541BF4C40400617BDE /* RModelCreat.h */,
+				BC6D4C551BF4C40400617BDE /* RPropertyType.h */,
+				BC6D4C561BF4C40400617BDE /* RPropertyType.m */,
+			);
+			path = RModelCreat;
+			sourceTree = "<group>";
+		};
 		BCE3B2111BEDCAAC00357934 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +104,7 @@
 		BCE3B21C1BEDCAAC00357934 /* RModelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BC6D4C511BF4C40400617BDE /* RModelCreat */,
 				BCE3B2201BEDCAAC00357934 /* AppDelegate.h */,
 				BCE3B2211BEDCAAC00357934 /* AppDelegate.m */,
 				BCE3B2231BEDCAAC00357934 /* ViewController.h */,
@@ -232,6 +252,8 @@
 			files = (
 				BCE3B2251BEDCAAC00357934 /* ViewController.m in Sources */,
 				BCE3B2221BEDCAAC00357934 /* AppDelegate.m in Sources */,
+				BC6D4C571BF4C40400617BDE /* NSObject+RModel.m in Sources */,
+				BC6D4C581BF4C40400617BDE /* RPropertyType.m in Sources */,
 				BCE3B21F1BEDCAAC00357934 /* main.m in Sources */,
 				BCE3B2361BEDD7D500357934 /* RDemoModel.m in Sources */,
 			);

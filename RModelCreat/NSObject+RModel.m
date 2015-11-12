@@ -127,6 +127,9 @@ static char key;
 +(NSArray *)objectsWithArray:(NSArray *)array
 {
     NSMutableArray * arrayM = [ NSMutableArray array];
+    if (![array isKindOfClass:[NSArray class]] || !array.count) {
+        return nil;
+    }
     for (NSDictionary * dict in array) {
         [arrayM addObject:[self objectWithDictionary:dict]];
     }
