@@ -70,6 +70,8 @@ static char key;
         }
         [self addMorePropertyOrSomething];
         
+        free(propertyList);
+        
     }
     return self;
 }
@@ -120,6 +122,9 @@ static char key;
 //设置值
 -(void)r_FindDictionary:(NSDictionary *)dictionary andKey:(NSString *)keyString toPropertyName:(NSString *)propertyName
 {
+    if (!dictionary[keyString]) {
+        return;
+    }
     [self setValue:dictionary[keyString] forKey:propertyName];
     [self.allKeysArray removeObject:keyString];
 }
@@ -164,6 +169,7 @@ static char key;
         }
         [jsonDict setValue:value forKey:keyName];
     }
+    free(propertyList);
     return jsonDict;
 }
 
@@ -236,6 +242,7 @@ static char key;
             }
         }
     }
+    free(propertyList);
     [stringM appendFormat:@"\n%@}",[self tCountWihtCount:count]];
     return stringM;
 }
