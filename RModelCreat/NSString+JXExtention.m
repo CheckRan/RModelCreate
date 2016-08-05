@@ -23,10 +23,27 @@
     if ([self respondsToSelector:aSelector]) {
         return self;
     }
-    else
+    else if ([NSNumber instancesRespondToSelector:aSelector])
     {
         return [NSNumber numberWithInteger:self.integerValue];
     }
+    return nil;
+}
+
+@end
+
+@implementation NSNumber (JXExtention)
+
+- (id)forwardingTargetForSelector:(SEL)aSelector
+{
+    if ([self respondsToSelector:aSelector]) {
+        return self;
+    }
+    else if([NSString instancesRespondToSelector:aSelector])
+    {
+        return [NSString stringWithFormat:@"%@",self];
+    }
+    return nil;
 }
 
 @end

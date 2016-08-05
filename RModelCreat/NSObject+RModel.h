@@ -11,9 +11,12 @@
 
 @property (nonatomic , strong) NSMutableArray * allKeysArray;
 
-+(id)objectWithDictionary:(NSDictionary *)dictionary;
--(id)initWithDictionary:(NSDictionary *)dictionary;
-+(NSArray *)objectsWithArray:(NSArray *)array;
++ (id)objectWithDictionary:(NSDictionary *)dictionary;
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+- (void)loadDataWithDict:(NSDictionary *)dictionary;
++ (NSArray *)objectsWithArray:(NSArray *)array;
+
+- (NSDictionary *)getPropertyDictionary;
 
 /**
  *  加入模型中有 NSArray ,需要重写此方法,自己动态设置的值 会在内部调用  + (NSDictionary *)objectClassInArray; 最好此方法不要重写
@@ -28,6 +31,7 @@
  *  @return 所有的 description
  */
 -(NSString *)r_Description;
+
 
 /**
  *  用于 r_dealSetValueKeyNotFound:andDictionary 中调用 , 例如 :dictionary[keyString] -> self.propertyName

@@ -12,6 +12,10 @@
 
 @end
 
+@interface NSNumber (JXExtention)
+
+@end
+
 @interface NSNull (JXErrorLoad)
 
 @end

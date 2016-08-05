@@ -5,7 +5,9 @@
 //  Copyright (c) 2015年 CheckRan. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "RPropertyType.h"
+#import "JXCommonDefine.h"
 
 @implementation RPropertyType
 
@@ -38,10 +40,8 @@
     
     _numberType = YES;
     
-   
-    
     if (keyString.length) {
-        if ([keyString containsString:@"NS"]) {
+        if ([self judgeStringContait:keyString containsString:@"NS"]) {
             self.foundationType = NSClassFromString(keyString);
         }
         else
@@ -51,5 +51,21 @@
         }
     }
 }
+
+- (BOOL)judgeStringContait:(NSString *)keyString containsString:(NSString *)string
+{
+    if (IOS_VERSION >= 9.0) {
+        return [keyString localizedStandardContainsString:string];
+    }
+    else if (IOS_VERSION >= 8.0)
+    {
+        return [keyString containsString:string];
+    }
+    else
+    {
+        return [keyString rangeOfString:string].location != NSNotFound;
+    }
+}
+
 
 @end
