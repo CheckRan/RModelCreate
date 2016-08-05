@@ -1,15 +1,13 @@
 //
 //  NSObject+RModel.m
-//  02-Model封装
 //
-//  Created by qianfeng on 15/10/8.
-//  Copyright (c) 2015年 qianfeng. All rights reserved.
+//  Created by CheckRan on 15/10/8.
+//  Copyright (c) 2015年 CheckRan. All rights reserved.
 //
 
 #import <objc/runtime.h>
 #import "NSObject+RModel.h"
 #import "RPropertyType.h"
-
 
 @implementation NSObject (RModel)
 
@@ -51,7 +49,9 @@ static char key;
             RPropertyType * proType = [RPropertyType propertyTypeWithKeyString:attributes];
             
             if (proType.customType) {
-                value = [proType.customType objectWithDictionary:dictionary[keyName]];
+                if (dictionary[keyName]) {
+                    value = [proType.customType objectWithDictionary:dictionary[keyName]];
+                }
             }
             if (value == nil) {//如果字典中没有值 , 调用 r_dealSetValueKeyNotFound
 
@@ -83,25 +83,36 @@ static char key;
 
 -(void)ZJModelWithDiconary:(NSDictionary *)dictionary
 {
+#define RModelDebug
+#ifdef RModelDebug
     printf("\n添加下列属性至 %s \n",[NSStringFromClass([self class]) UTF8String]);
+#endif
     for (NSString *key in self.allKeysArray) {
 //        NSString *type = ([dictionary[key] isKindOfClass:[NSNumber class]])?@"NSNumber":@"NSString";
         Class type = [dictionary[key] class];//NSString  NSNumber
         if ([type isSubclassOfClass:[NSString class]] || [type isSubclassOfClass:[NSNumber class]]) {
+#ifdef RModelDebug
              NSString *typeName = ([dictionary[key] isKindOfClass:[NSNumber class]])?@"NSNumber":@"NSString";
              printf("@property (nonatomic,copy) %s *%s;\n",typeName.UTF8String,key.UTF8String);
+#endif
         }
         else if([type isSubclassOfClass:[NSArray class]])
         {
+#ifdef RModelDebug
             NSString *typeName = @"NSArray";
             printf("@property (nonatomic,strong) %s *%s;\n",typeName.UTF8String,key.UTF8String);
+#endif
         }
         else
         {
+#ifdef RModelDebug
             printf(" 属性无法判断  %s  \n",key.UTF8String);
+#endif
         }
     }
+#ifdef RModelDebug
     printf("\n");
+#endif
 }
 
 //默认 ID -> id  desc -> description

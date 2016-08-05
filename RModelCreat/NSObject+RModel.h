@@ -1,9 +1,8 @@
 //
 //  NSObject+RModel.h
-//  02-Model封装
 //
-//  Created by qianfeng on 15/10/8.
-//  Copyright (c) 2015年 qianfeng. All rights reserved.
+//  Created by CheckRan on 15/10/8.
+//  Copyright (c) 2015年 CheckRan. All rights reserved.
 // 更新日期 : 2015-10-12 10:23
 
 #import <Foundation/Foundation.h>

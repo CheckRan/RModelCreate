@@ -1,9 +1,8 @@
 //
 //  RPropertyType.m
-//  02-Model封装
 //
-//  Created by qianfeng on 15/10/8.
-//  Copyright (c) 2015年 qianfeng. All rights reserved.
+//  Created by CheckRan on 15/10/8.
+//  Copyright (c) 2015年 CheckRan. All rights reserved.
 //
 
 #import "RPropertyType.h"
