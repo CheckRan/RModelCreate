@@ -1,4 +1,4 @@
-# RModelCreat
+# RModelCreate
  这是一款快速创建 Json Model 的框架 , 但是需要借助于 ESJsonFormat 配合使用
  
 #假如你没有ESJsonFormat请先安装插件(保证你不会后悔的)
@@ -76,7 +76,8 @@ description 没有办法,只能你在 Model 中手工改一下罗 !
 	* 在 .h 中加入 showEditDate 属性
 	* 截取前面 9 个字母即可
 	*/
-	self.showEditDate = [self.editDate substringToIndex:9];}
+	self.showEditDate = [self.editDate substringToIndex:9];
+}
 ```
 
 为了以防万一 , ESJsonFormat 不知道有没有可能会出现 有数组没有对应生成  `+ (NSDictionary *)objectClassInArray` 方法 , 你可以在对应的对象中加入此方法,格式就是这样
@@ -128,7 +129,31 @@ pod 'RModelCreat' ,'1.0'
 
 ###测试数据
 ```
-{  "code": "0",  "msg": "success",  "version": "4.0",  "timestamp": 1442571669000,  "data": {    "page": "1",    "size": "10",    "total": "23",    "count": "10",    "data": [      {        "comment_id": "2157",        "user_id": "878338",        "headphoto": "http:\/\/q.qlogo.cn\/qqapp\/100956582\/1F6F7412241E465F186A2F804415D36E\/100",        "nickname": "紫色幽兰",        "create_time": "23小时前",        "content": "好吃极了",        "agreement_amount": "",        "like": ""      }      ]  }}```
+{
+  "code": "0",
+  "msg": "success",
+  "version": "4.0",
+  "timestamp": 1442571669000,
+  "data": {
+    "page": "1",
+    "size": "10",
+    "total": "23",
+    "count": "10",
+    "data": [
+      {
+        "comment_id": "2157",
+        "user_id": "878338",
+        "headphoto": "http:\/\/q.qlogo.cn\/qqapp\/100956582\/1F6F7412241E465F186A2F804415D36E\/100",
+        "nickname": "紫色幽兰",
+        "create_time": "23小时前",
+        "content": "好吃极了",
+        "agreement_amount": "",
+        "like": ""
+      }  
+    ]
+  }
+}
+```
 如需转载 , 请 注明来源 :
 `
  https://github.com/CheckRan/RModelCreat

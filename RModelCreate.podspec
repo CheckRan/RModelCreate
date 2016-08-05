@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "RModelCreat"
-  s.version      = "1.0.4"
+  s.name         = "RModelCreate"
+  s.version      = "1.0.3"
   s.summary      = "这是一个简化 Json 模型反序列化操作"
 
   # This description is used to generate tags and improve search results.
