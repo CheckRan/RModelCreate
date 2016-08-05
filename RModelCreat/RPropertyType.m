@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import "RPropertyType.h"
-#import "JXCommonDefine.h"
 
 @implementation RPropertyType
 
@@ -54,10 +53,10 @@
 
 - (BOOL)judgeStringContait:(NSString *)keyString containsString:(NSString *)string
 {
-    if (IOS_VERSION >= 9.0) {
+    if (R_IOS_VERSION >= 9.0) {
         return [keyString localizedStandardContainsString:string];
     }
-    else if (IOS_VERSION >= 8.0)
+    else if (R_IOS_VERSION >= 8.0)
     {
         return [keyString containsString:string];
     }

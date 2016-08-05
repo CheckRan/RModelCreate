@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define R_IOS_VERSION ([[[UIDevice currentDevice] systemVersion]floatValue])
+
 @interface RPropertyType : NSObject
 
 /**
