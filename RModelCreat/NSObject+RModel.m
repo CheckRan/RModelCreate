@@ -8,7 +8,6 @@
 #import <objc/runtime.h>
 #import "NSObject+RModel.h"
 #import "RPropertyType.h"
-#import "JXCommonDefine.h"
 
 @implementation NSObject (RModel)
 
