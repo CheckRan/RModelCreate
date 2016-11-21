@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RModelCreate"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "这是一个简化 Json 模型反序列化操作"
 
   # This description is used to generate tags and improve search results.
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/CheckRan/RModelCreat.git", :tag => s.version}
+  s.source       = { :git => "https://github.com/CheckRan/RModelCreate.git", :tag => s.version}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
