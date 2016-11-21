@@ -8,25 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		09011EFE9E2189E9847AFD3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D78DF39874D53EC2C22ADCA /* libPods.a */; };
-		BC6D4C571BF4C40400617BDE /* NSObject+RModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D4C531BF4C40400617BDE /* NSObject+RModel.m */; settings = {ASSET_TAGS = (); }; };
-		BC6D4C581BF4C40400617BDE /* RPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D4C561BF4C40400617BDE /* RPropertyType.m */; settings = {ASSET_TAGS = (); }; };
+		193576441DE2A0A4008BB396 /* NSObject+RModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1935763E1DE2A0A4008BB396 /* NSObject+RModel.m */; };
+		193576451DE2A0A4008BB396 /* NSString+JXExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 193576401DE2A0A4008BB396 /* NSString+JXExtention.m */; };
+		193576461DE2A0A4008BB396 /* RPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 193576431DE2A0A4008BB396 /* RPropertyType.m */; };
 		BCE3B21F1BEDCAAC00357934 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B21E1BEDCAAC00357934 /* main.m */; };
 		BCE3B2221BEDCAAC00357934 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B2211BEDCAAC00357934 /* AppDelegate.m */; };
 		BCE3B2251BEDCAAC00357934 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B2241BEDCAAC00357934 /* ViewController.m */; };
 		BCE3B2281BEDCAAC00357934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCE3B2261BEDCAAC00357934 /* Main.storyboard */; };
 		BCE3B22A1BEDCAAC00357934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE3B2291BEDCAAC00357934 /* Assets.xcassets */; };
 		BCE3B22D1BEDCAAC00357934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCE3B22B1BEDCAAC00357934 /* LaunchScreen.storyboard */; };
-		BCE3B2361BEDD7D500357934 /* RDemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B2351BEDD7D500357934 /* RDemoModel.m */; settings = {ASSET_TAGS = (); }; };
+		BCE3B2361BEDD7D500357934 /* RDemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B2351BEDD7D500357934 /* RDemoModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1935763D1DE2A0A4008BB396 /* NSObject+RModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RModel.h"; sourceTree = "<group>"; };
+		1935763E1DE2A0A4008BB396 /* NSObject+RModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RModel.m"; sourceTree = "<group>"; };
+		1935763F1DE2A0A4008BB396 /* NSString+JXExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JXExtention.h"; sourceTree = "<group>"; };
+		193576401DE2A0A4008BB396 /* NSString+JXExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JXExtention.m"; sourceTree = "<group>"; };
+		193576411DE2A0A4008BB396 /* RModelCreat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RModelCreat.h; sourceTree = "<group>"; };
+		193576421DE2A0A4008BB396 /* RPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPropertyType.h; sourceTree = "<group>"; };
+		193576431DE2A0A4008BB396 /* RPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPropertyType.m; sourceTree = "<group>"; };
 		230841C27F94873B63D201E9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8D78DF39874D53EC2C22ADCA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC6D4C521BF4C40400617BDE /* NSObject+RModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RModel.h"; sourceTree = "<group>"; };
-		BC6D4C531BF4C40400617BDE /* NSObject+RModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RModel.m"; sourceTree = "<group>"; };
-		BC6D4C541BF4C40400617BDE /* RModelCreat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RModelCreat.h; sourceTree = "<group>"; };
-		BC6D4C551BF4C40400617BDE /* RPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPropertyType.h; sourceTree = "<group>"; };
-		BC6D4C561BF4C40400617BDE /* RPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPropertyType.m; sourceTree = "<group>"; };
 		BCE3B21A1BEDCAAC00357934 /* RModelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RModelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE3B21E1BEDCAAC00357934 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCE3B2201BEDCAAC00357934 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +57,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1935763C1DE2A0A4008BB396 /* RModelCreate */ = {
+			isa = PBXGroup;
+			children = (
+				1935763D1DE2A0A4008BB396 /* NSObject+RModel.h */,
+				1935763E1DE2A0A4008BB396 /* NSObject+RModel.m */,
+				1935763F1DE2A0A4008BB396 /* NSString+JXExtention.h */,
+				193576401DE2A0A4008BB396 /* NSString+JXExtention.m */,
+				193576411DE2A0A4008BB396 /* RModelCreat.h */,
+				193576421DE2A0A4008BB396 /* RPropertyType.h */,
+				193576431DE2A0A4008BB396 /* RPropertyType.m */,
+			);
+			path = RModelCreate;
+			sourceTree = "<group>";
+		};
 		4351F75DCE84EDF28AC1D388 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,18 +86,6 @@
 				8D78DF39874D53EC2C22ADCA /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BC6D4C511BF4C40400617BDE /* RModelCreat */ = {
-			isa = PBXGroup;
-			children = (
-				BC6D4C521BF4C40400617BDE /* NSObject+RModel.h */,
-				BC6D4C531BF4C40400617BDE /* NSObject+RModel.m */,
-				BC6D4C541BF4C40400617BDE /* RModelCreat.h */,
-				BC6D4C551BF4C40400617BDE /* RPropertyType.h */,
-				BC6D4C561BF4C40400617BDE /* RPropertyType.m */,
-			);
-			path = RModelCreat;
 			sourceTree = "<group>";
 		};
 		BCE3B2111BEDCAAC00357934 = {
@@ -104,7 +109,7 @@
 		BCE3B21C1BEDCAAC00357934 /* RModelDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BC6D4C511BF4C40400617BDE /* RModelCreat */,
+				1935763C1DE2A0A4008BB396 /* RModelCreate */,
 				BCE3B2201BEDCAAC00357934 /* AppDelegate.h */,
 				BCE3B2211BEDCAAC00357934 /* AppDelegate.m */,
 				BCE3B2231BEDCAAC00357934 /* ViewController.h */,
@@ -162,7 +167,7 @@
 				TargetAttributes = {
 					BCE3B2191BEDCAAC00357934 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = V39SVZ7ZY6;
+						DevelopmentTeam = 32JUJQ54R4;
 					};
 				};
 			};
@@ -252,9 +257,10 @@
 			files = (
 				BCE3B2251BEDCAAC00357934 /* ViewController.m in Sources */,
 				BCE3B2221BEDCAAC00357934 /* AppDelegate.m in Sources */,
-				BC6D4C571BF4C40400617BDE /* NSObject+RModel.m in Sources */,
-				BC6D4C581BF4C40400617BDE /* RPropertyType.m in Sources */,
+				193576461DE2A0A4008BB396 /* RPropertyType.m in Sources */,
+				193576441DE2A0A4008BB396 /* NSObject+RModel.m in Sources */,
 				BCE3B21F1BEDCAAC00357934 /* main.m in Sources */,
+				193576451DE2A0A4008BB396 /* NSString+JXExtention.m in Sources */,
 				BCE3B2361BEDD7D500357934 /* RDemoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +372,7 @@
 			baseConfigurationReference = 230841C27F94873B63D201E9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 32JUJQ54R4;
 				INFOPLIST_FILE = RModelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianfeng.RModelDemo;
@@ -378,6 +385,7 @@
 			baseConfigurationReference = C458595367AD2930E45A3C82 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 32JUJQ54R4;
 				INFOPLIST_FILE = RModelDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianfeng.RModelDemo;

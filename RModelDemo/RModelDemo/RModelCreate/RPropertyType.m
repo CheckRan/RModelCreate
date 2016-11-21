@@ -1,11 +1,11 @@
 //
 //  RPropertyType.m
-//  02-Model封装
 //
-//  Created by qianfeng on 15/10/8.
-//  Copyright (c) 2015年 qianfeng. All rights reserved.
+//  Created by CheckRan on 15/10/8.
+//  Copyright (c) 2015年 CheckRan. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "RPropertyType.h"
 
 @implementation RPropertyType
@@ -39,10 +39,8 @@
     
     _numberType = YES;
     
-   
-    
     if (keyString.length) {
-        if ([keyString containsString:@"NS"]) {
+        if ([self judgeStringContait:keyString containsString:@"NS"]) {
             self.foundationType = NSClassFromString(keyString);
         }
         else
@@ -52,5 +50,21 @@
         }
     }
 }
+
+- (BOOL)judgeStringContait:(NSString *)keyString containsString:(NSString *)string
+{
+    if (R_IOS_VERSION >= 9.0) {
+        return [keyString localizedStandardContainsString:string];
+    }
+    else if (R_IOS_VERSION >= 8.0)
+    {
+        return [keyString containsString:string];
+    }
+    else
+    {
+        return [keyString rangeOfString:string].location != NSNotFound;
+    }
+}
+
 
 @end

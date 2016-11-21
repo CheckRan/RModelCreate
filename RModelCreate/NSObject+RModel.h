@@ -16,6 +16,7 @@
 - (void)loadDataWithDict:(NSDictionary *)dictionary;
 + (NSArray *)objectsWithArray:(NSArray *)array;
 
+- (NSDictionary *)getAllPropertyDict;
 - (NSDictionary *)getPropertyDictionary;
 
 /**
