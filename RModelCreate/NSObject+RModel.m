@@ -69,7 +69,6 @@ static char key;
         else
         {
             [self setValue:value forKey:keyName];
-            NSArray * allKeyArray = self.allKeysArray;
             [self.allKeysArray removeObject:keyName];
         }
     }
